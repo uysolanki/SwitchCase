@@ -1,0 +1,488 @@
+/*q) accept the age,gender,waistSize, height, donation of Male / Female
+merit selection for Male 
+age <= 21 && waistSize <= 32 && height >= 6.1)
+
+merit selection for Female 
+age <= 19 && waistSize <= 26 && height >= 5.8)
+
+or you can be selected by paying donation
+*/
+
+package day4;
+
+import java.util.Scanner;
+
+public class LogicalOperators {
+
+	public static void main(String[] args) {
+		int gender, age, waistSize,donation;
+		double height;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter Gender [1 - Male  0-Female");
+		gender = sc.nextInt();
+		System.out.println("Please enter age in years");
+		age = sc.nextInt();
+		System.out.println("Please enter waist size in inch");
+		waistSize = sc.nextInt();
+		System.out.println("Please enter height in feets");
+		height = sc.nextDouble();
+		System.out.println("Are you willing to pay donation [1 - Yes  0-No]");
+		donation = sc.nextInt();
+
+		
+			if ((gender == 1 && age <= 21 && waistSize <= 32 && height >= 6.1)||!(donation==0))
+			{
+			System.out.println("Eligible");
+			}
+			else if((gender == 0 && age <= 19 && waistSize <= 26 && height >= 5.8)||(donation==1))
+			{
+				System.out.println("Eligible");
+			}
+			else
+			{
+				System.out.println("Not Eligible");
+			}
+	}
+
+}
+
+
+---------------
+
+/*q) accept p c m marks and selection criteria is
+more than 70 in any 2 subjects + aggregate more than 240
+*/
+
+package day4;
+
+import java.util.Scanner;
+
+public class LogicalOperators {
+
+	public static void main(String[] args) {
+		int p,c,m;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter Physics marks out of 100");
+		p = sc.nextInt();
+		System.out.println("Please enter Chem marks out of 100");
+		c = sc.nextInt();
+		System.out.println("Please enter Maths marks out of 100");
+		m = sc.nextInt();
+		int total=p+c+m;
+			if ((p>=70 && c>=70 && total>=240) || (p>=70 && m>=70 && total>=240) || (m>=70 && c>=70 && total>=240))
+			{
+			System.out.println("Selected");
+			}
+			else
+			{
+				System.out.println("Not Selected");
+			}
+			
+	}
+
+}
+
+
+//Aniket Logica
+
+package day4;
+
+import java.util.Scanner;
+
+public class LogicalOperators {
+
+	public static void main(String[] args) {
+		int p,c,m;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter Physics marks out of 100");
+		p = sc.nextInt();
+		System.out.println("Please enter Chem marks out of 100");
+		c = sc.nextInt();
+		System.out.println("Please enter Maths marks out of 100");
+		m = sc.nextInt();  //71 71 90
+		int counter=0;		//counter=0
+		if(p>=70) 
+			counter++;		//counter=1
+		if(c>=70) 
+			counter++;		//counter=2
+		if(m>=70) 
+			counter++;		//counter=3
+		//   T           F
+		if(counter>=2 && p+c+m>=240)
+			System.out.println("Eligible");
+		else
+			System.out.println("Not Eligible");
+	}
+
+}
+-------
+System.out.println("****MENU****");
+		System.out.println("1. English");
+		System.out.println("2. Hindi");
+		System.out.println("3. Marathi");
+		System.out.println("4. Exit");
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Please enter your choice");
+		int choice=sc.nextInt();
+		
+		if(choice==1)
+		{
+			System.out.println("Route the call to USA");
+		}
+		else if(choice==2)
+		{
+			System.out.println("Route the call to Delhi");
+		}
+		else if(choice==3)
+		{
+			System.out.println("Route the call to Pune");
+		}
+		else if(choice==4)
+		{
+			System.exit(0);
+		}
+		else
+		{
+			System.out.println("Invalid choice");
+		}
+	}
+	
+----
+
+/*1. English
+2. Arabic
+
+choice 1: 
+1. UK Accent
+2. US Accent
+
+choice : 1   call routed to London
+choice : 2   call routed to New York
+
+choice 2: 
+1. Qatar Accent
+2. Dubai Accent
+
+choice : 1   call routed to Doha
+choice : 2   call routed to Abu Dhabi
+*/
+		
+package day4;
+
+import java.util.Scanner;
+
+public class LogicalOperators {
+
+	public static void main(String[] args) {
+		int choice;
+		System.out.println("****MAIN MENU****");
+		System.out.println("1. English");
+		System.out.println("2. Arabic");
+		System.out.println("3. Exit");
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Choice : ");
+		choice=sc.nextInt();
+		
+		switch(choice)
+		{
+		case 1:	
+					System.out.println("****English Accents****");
+					System.out.println("1. UK");
+					System.out.println("2. US");
+					System.out.println("3. Exit");
+					System.out.println("Choice : ");
+					choice=sc.nextInt();
+					switch(choice)
+					{
+					case 1: System.out.println("Route the call to London");
+					break;
+					case 2: System.out.println("Route the call to New York");
+					break;
+					case 3: System.out.println("Thank You");System.exit(0);
+					default : System.out.println("Invalid choice");
+					}
+		break;
+		case 2:		System.out.println("****Arabic Accents****");
+					System.out.println("1. Qatar");
+					System.out.println("2. Dubai");
+					System.out.println("3. Exit");
+					System.out.println("Choice : ");
+					choice=sc.nextInt();
+					switch(choice)
+					{
+					case 1: System.out.println("Route the call to Doha");
+					break;
+					case 2: System.out.println("Route the call to Abu Dhabi");
+					break;
+					case 3: System.out.println("Thank You");System.exit(0);
+					default : System.out.println("Invalid choice");
+					}
+		break;
+		case 3:	System.out.println("Thank You");System.exit(0);
+		default:System.out.println("Invalid choice");
+		}
+	}
+
+}
+
+
+
+---------------------
+
+/*
+****Main Menu****
+1. Pizza
+2. Fries
+3. Burger
+4. Exit
+
+Choice : 1
+****Pizza Options ***
+1. Non Veg
+2. Veg
+3. Exit
+choice : 1
+
+****Non Veg Pizza Options ***
+1. Large
+2. Medium
+3. Small
+
+choice : 2
+
+Order placed  for a Medium Non Veg Pizza
+*/
+
+
+
+
+package day4;
+
+import java.util.Scanner;
+
+public class LogicalOperators {
+
+	public static void main(String[] args) {
+		int choice;
+		System.out.println("****MAIN MENU****");
+		System.out.println("1. Pizza");
+		System.out.println("2. Fries");
+		System.out.println("3. Burger");
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Choice : ");
+		choice = sc.nextInt();
+
+		switch (choice) 
+		{
+		case 1:
+			System.out.println("****Pizza Options****");
+			System.out.println("1. Veg");
+			System.out.println("2. Non Veg");
+			System.out.println("3. Exit");
+			System.out.println("Choice : ");
+			choice = sc.nextInt();
+			switch (choice) {
+			case 1:
+				System.out.println("****Size Options****");
+				System.out.println("1. Large");
+				System.out.println("2. Medium");
+				System.out.println("3. Small");
+				System.out.println("4. Exit");
+				System.out.println("Choice : ");
+				choice = sc.nextInt();
+				switch (choice) {
+				case 1:
+					System.out.println("Order placed for Large Veg Pizza");
+					break;
+				case 2:
+					System.out.println("Order placed for Medium Veg Pizza");
+					break;
+				case 3:
+					System.out.println("Order placed for Small Veg Pizza");
+					break;
+				case 4:
+					System.out.println("Thank You");
+					System.exit(0);
+					break;
+				default:
+					System.out.println("Invalid Choice");
+					break;
+				}
+
+				break;
+			case 2:
+				System.out.println("****Size Options****");
+				System.out.println("1. Large");
+				System.out.println("2. Medium");
+				System.out.println("3. Small");
+				System.out.println("4. Exit");
+				System.out.println("Choice : ");
+				choice = sc.nextInt();
+				switch (choice) {
+				case 1:
+					System.out.println("Order placed for Large Non Veg Pizza");
+					break;
+				case 2:
+					System.out.println("Order placed for Medium Non Veg Pizza");
+					break;
+				case 3:
+					System.out.println("Order placed for Small Non Veg Pizza");
+					break;
+				case 4:
+					System.out.println("Thank You");
+					System.exit(0);
+				default:
+					System.out.println("Invalid Choice");
+					break;
+				}
+				break;
+			case 3:
+				System.out.println("Thank You");
+				System.exit(0);
+			default:
+				System.out.println("Invalid choice");
+			}
+		break;
+		case 2:
+			System.out.println("****Fries Options****");
+			System.out.println("1. Peri Peri");
+			System.out.println("2. Salted");
+			System.out.println("3. Exit");
+			System.out.println("Choice : ");
+			choice = sc.nextInt();
+			switch (choice) {
+			case 1:
+				System.out.println("****Size Options****");
+				System.out.println("1. Large");
+				System.out.println("2. Medium");
+				System.out.println("3. Small");
+				System.out.println("4. Exit");
+				System.out.println("Choice : ");
+				choice = sc.nextInt();
+				switch (choice) {
+				case 1:
+					System.out.println("Order placed for Large Peri Peri Fries");
+					break;
+				case 2:
+					System.out.println("Order placed for Medium Peri Peri Fries");
+					break;
+				case 3:
+					System.out.println("Order placed for Small Peri Peri Fries");
+					break;
+				case 4:
+					System.out.println("Thank You");
+					System.exit(0);
+				default:
+					System.out.println("Invalid Choice");
+					break;
+				}
+
+			break;
+			case 2:
+				System.out.println("****Size Options****");
+				System.out.println("1. Large");
+				System.out.println("2. Medium");
+				System.out.println("3. Small");
+				System.out.println("4. Exit");
+				System.out.println("Choice : ");
+				choice = sc.nextInt();
+				switch (choice) {
+				case 1:
+					System.out.println("Order placed for Large Salted Fries");
+					break;
+				case 2:
+					System.out.println("Order placed for Medium Salted Fries");
+					break;
+				case 3:
+					System.out.println("Order placed for Small Salted Fries");
+					break;
+				case 4:
+					System.out.println("Thank You");
+					System.exit(0);
+				default:
+					System.out.println("Invalid Choice");
+					break;
+				}
+				break;
+			case 3:
+				System.out.println("Thank You");
+				System.exit(0);
+			default:
+				System.out.println("Invalid choice");
+			}
+			case 3:
+				System.out.println("****Burger Options****");
+				System.out.println("1. Veg");
+				System.out.println("2. Non Veg");
+				System.out.println("3. Exit");
+				System.out.println("Choice : ");
+				choice = sc.nextInt();
+				switch (choice) {
+				case 1:
+					System.out.println("****Size Options****");
+					System.out.println("1. Large");
+					System.out.println("2. Medium");
+					System.out.println("3. Small");
+					System.out.println("4. Exit");
+					System.out.println("Choice : ");
+					choice = sc.nextInt();
+					switch (choice) {
+					case 1:
+						System.out.println("Order placed for Large Veg Burger");
+						break;
+					case 2:
+						System.out.println("Order placed for Medium Veg Burger");
+						break;
+					case 3:
+						System.out.println("Order placed for Small Veg Burger");
+						break;
+					case 4:
+						System.out.println("Thank You");
+						System.exit(0);
+						break;
+					default:
+						System.out.println("Invalid Choice");
+						break;
+					}
+
+					break;
+				case 2:
+					System.out.println("****Size Options****");
+					System.out.println("1. Large");
+					System.out.println("2. Medium");
+					System.out.println("3. Small");
+					System.out.println("4. Exit");
+					System.out.println("Choice : ");
+					choice = sc.nextInt();
+					switch (choice) {
+					case 1:
+						System.out.println("Order placed for Large Non Veg Burger");
+						break;
+					case 2:
+						System.out.println("Order placed for Medium Non Veg Burger");
+						break;
+					case 3:
+						System.out.println("Order placed for Small Non Veg Burger");
+						break;
+					case 4:
+						System.out.println("Thank You");
+						System.exit(0);
+					default:
+						System.out.println("Invalid Choice");
+						break;
+					}
+					break;
+				case 3:
+					System.out.println("Thank You");
+					System.exit(0);
+				default:
+					System.out.println("Invalid choice");
+				}
+			default:
+				System.out.println("Invalid choice");
+			}
+		}
+}
